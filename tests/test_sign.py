@@ -17,6 +17,7 @@ class TestSign(BaseTest):
     def test_valid_sign(self):
         username = self.config_reader.config_section_dict("AUT")["username"]
         self.pages['sign_page'].enter_fullname(username)
+        print("The User Name Is : " + username)
         self.pages['sign_page'].click_next()
         self.pages['sign_page'].capture_confirmation_model()
         self.pages['sign_page'].click_save()
