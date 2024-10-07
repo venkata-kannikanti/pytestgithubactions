@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Starting Selenoid Server (aerokube/selenoid) within actions
-        uses: ajinx/selenoid@2.0
+        # uses: ajinx/selenoid@2.0
       - name: Set up Python 3.12
         uses: actions/setup-python@v2
         with:
@@ -32,7 +32,7 @@ jobs:
       - name: Test with pytest
         run: |
           # pytest --browser remote
-          python -m pytest tests/test_sign.py --browser remote
+          pytest tests/test_sign.py --browser remote
       - name: Allure results
         uses: simple-elf/allure-report-action@master
         if: always()
